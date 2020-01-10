@@ -85,6 +85,7 @@ if (file.exists(file)) {
   X_tx <- readRDS(file)
 } else {
   X_mat <- as.matrix(X)
+  rm(X); gc() #GEH
   X_split <- split_matrix(X_mat, colnames(X_mat), byrow = FALSE) ## split the matrix
   i <- 0
   ## For each TCC, create a matrix whose rows are the transcripts mapping to that
@@ -101,7 +102,7 @@ if (file.exists(file)) {
       ec <- colnames(x)
       txs <- EC_dict[[ec]]
       xp <- x[, 1] / length(txs)
-      matrix(nrow = nrow(x), ncol = length(txs), data = rep(xp, length(txs)), byrow = FALSE, dimnames = list(rownames(x), txs))
+      as(matrix(nrow = nrow(x), ncol = length(txs), data = rep(xp, length(txs)), byrow = FALSE, dimnames = list(rownames(x), txs)), "sparseMatrix")
     }
   )
   tx_split <- do.call(c, lapply(X_split_tx, colnames)) ## Tabulate for each TCC the mapping transcripts
