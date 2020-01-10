@@ -37,7 +37,7 @@ options("mc.cores" = parallel::detectCores())
 ## -----------------------------------------------------------------------------
 ## Load data.
 ## Source: https://github.com/pachterlab/NYMP_2018/blob/master/10x_example-logR/matrix.tcc.mtx.gz
-X <- readMM("./matrix.tcc.mtx")
+X <- readMM("./matrix.tcc.mtx.gz")
 colnames(X) <- 1:ncol(X) - 1
 
 ## Creating mappings
