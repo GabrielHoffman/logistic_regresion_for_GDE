@@ -87,6 +87,7 @@ if (file.exists(file)) {
   X_mat <- as.matrix(X)
   rm(X); gc() #GEH
   X_split <- split_matrix(X_mat, colnames(X_mat), byrow = FALSE) ## split the matrix
+  rm(X_mat); gc() #GEH
   i <- 0
   ## For each TCC, create a matrix whose rows are the transcripts mapping to that
   ## TCC, and columns are single cell. Count is the count vector of TCC, divided
