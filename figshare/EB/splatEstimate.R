@@ -21,6 +21,8 @@
 
     options(mc.cores=8L)
 
+    setwd("figshare/EB")
+
     ## Load wrappers to run LR & MAST
     source("../../wrappers.R")
 

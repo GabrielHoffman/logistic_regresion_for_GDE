@@ -27,7 +27,7 @@ library(RColorBrewer)
 library(ggpubr)
 library(patchwork) ## devtools::install_github('thomasp85/patchwork')
 
-options(mc.cores = parallel::detectCores())
+options(mc.cores = 1)
 
 setwd("figshare/EB") ## set to current working directory of this script
 
