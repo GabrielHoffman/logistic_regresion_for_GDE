@@ -27,7 +27,7 @@ library(tools)
 
 source("wrappers.R")
 setwd("NYMP_2018/10x_example-logR/")
-options("mc.cores" = parallel::detectCores())
+options("mc.cores" = 1)
 
 
 ## =============================================================================
