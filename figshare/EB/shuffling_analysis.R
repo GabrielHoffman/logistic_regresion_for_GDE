@@ -39,7 +39,7 @@ splatter_dir <- "../../figshare/splatter"
 ## https://github.com/pachterlab/NYMP_2018/blob/master/10x_example-logR/10x_example_logR-TCC_notebook.ipynb
 
 ## Load data
-X <- readMM("../../NYMP_2018/10x_example-logR/matrix.tcc.mtx")
+X <- readMM("../../NYMP_2018/10x_example-logR/matrix.tcc.mtx.gz")
 colnames(X) <- 1:ncol(X) - 1
 
 ## Mapping of TCCs to transcripts (EC_dict), TX numbers to ensembl gene transcript identifiers (TX_TO_ENST), to ensembl gene identifiers (TX_TO_ENSG)
